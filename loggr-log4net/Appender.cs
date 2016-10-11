@@ -6,7 +6,6 @@ namespace Loggr.Log4Net
     {
         protected override void Append(log4net.Core.LoggingEvent loggingEvent)
         {
-
             Loggr.FluentEvent ev = null;
             ev = loggingEvent.ExceptionObject != null ? Loggr.Events.CreateFromException(loggingEvent.ExceptionObject) : Loggr.Events.Create();
             ev.Text( loggingEvent.Level.DisplayName )
